@@ -79,7 +79,20 @@ public class ProdutosDAO {
                 }
 
     }
-    
+        public void venderProduto (ProdutosDTO produto){
+        
+    String sql =  "update produtos set status='Vendido' where id=?";  
+    try {
+        PreparedStatement stmt = this.conn.prepareStatement(sql);
+        stmt.setInt(1, Integer.valueOf(produto.getId())); 
+
+// 
+        stmt.execute();
+        
+        } catch (Exception e) {
+        System.out.println("Erro ao inserir Produto: " + e.getMessage());
+}
+    }
     
     
         
