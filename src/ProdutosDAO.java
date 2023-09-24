@@ -53,7 +53,7 @@ public class ProdutosDAO {
 
         
   
-                String sql = "SELECT * FROM produtos";
+                String sql = "SELECT * FROM produtos where status='A Venda'";
                 
                 try {
                     PreparedStatement stmt = this.conn.prepareStatement(sql);
